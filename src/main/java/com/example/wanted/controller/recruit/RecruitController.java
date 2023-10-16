@@ -22,5 +22,10 @@ public class RecruitController {
         recruitService.updateRecruitment(id, request);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteRecruitment(@PathVariable Long id){
+        recruitService.deleteRecruitment(id);
+    }
+
 
 }

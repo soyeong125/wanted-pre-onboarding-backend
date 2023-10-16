@@ -41,5 +41,13 @@ public class RecruitService {
         recruit.updateInfo(request.getPosition(), request.getCompensation(), request.getLocation(), request.getContent(), request.getSkill());
     }
 
+    @Transactional
+    public void deleteRecruitment(Long id) {
+        Recruit recruit =  recruitRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
+
+        recruitRepository.delete(recruit);
+    }
+
 
 }
