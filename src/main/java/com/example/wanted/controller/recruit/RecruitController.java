@@ -30,9 +30,9 @@ public class RecruitController {
         recruitService.deleteRecruitment(id);
     }
 
-    @GetMapping("/all")
-    public List<RecruitResponse> getRecruitments() {
-        return recruitService.getRecruitments();
+    @GetMapping
+    public List<RecruitResponse> getRecruitments(@RequestParam(required = false) String keyword) {
+        return recruitService.getRecruitments(keyword);
     }
 
 

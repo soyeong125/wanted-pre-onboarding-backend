@@ -54,8 +54,18 @@ public class RecruitService {
     }
 
     @Transactional(readOnly = true)
-    public List<RecruitResponse> getRecruitments(){
-        return recruitRepository.findAll().stream()
+    public List<RecruitResponse> getRecruitments(String keyword){
+
+        List<Recruit> list;
+
+        if(keyword == null || keyword.length() == 0){
+            list = recruitRepository.findAll();
+        }
+        else{
+            list = recruitRepository.findByKeyword(keyword);
+        }
+
+        return list.stream()
                 .map(RecruitResponse::new)
                 .collect(Collectors.toList());
     }
