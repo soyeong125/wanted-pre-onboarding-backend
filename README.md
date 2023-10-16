@@ -39,6 +39,8 @@
 - 채용공고 등록을 요청한 회사가 있는지 먼저 조회한다. 없으면 오류가 발생한다.</br>
 - 회사와 채용공고의 연관관계는 매핑되어있다.</br>
    - 회사가 저장한 공고는 회사의 recruitList 에 저장된다.
+   
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/5a68b0c2-70e5-4cb2-a33d-c084ac4e37ba)
 
 ### 2. 채용공고 수정
 - 수정할 채용공고가 먼저 있는지 조회한다. 없으면 오류가 발생한다.</br>
@@ -53,9 +55,12 @@
         this.skill = skill;
     }
 ```
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/71cdd254-c247-4604-869d-91ff2251e2f7)
 
 ### 3. 채용공고 삭제
 - 삭제할 채용공고가 먼저 있는지 조회한다. 없으면 오류가 발생한다.
+
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/eb2b33b6-f431-4e21-87c2-65b0e60ac9b3)
 
 ### 4. 채용공고 목록 조회 및 검색 기능
 - 전체 목록 조회와 검색 조회의 기능을 파라미터 여부를 사용해 함께 구현했다.
@@ -79,6 +84,9 @@
                OR r.skill like %:keyword%
             """)
 ```
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/6bd317a6-e7d9-447c-a695-cc1a03e42bde)
+
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/4086e695-1bc0-4cfb-8e1e-fb069ad3bc50)
 
 ### 5. 채용공고 상세 조회
 - 상세 조회할 채용공고가 먼저 있는지 조회한다. 없으면 오류가 발생한다.</br>
@@ -109,9 +117,14 @@
     }
 ```
 
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/a5683564-cee9-42cd-9817-ec28129e6167)
+
 ### 7. 채용공고 지원
 - 공고에 지원할 사용자가 먼저 있는지 조회한다. 없으면 오류가 발생한다.
 - 사용자가 지원할 공고가 있는지 먼저 조회한다. 없으면 오류가 발생한다.
 - 사용자가 이전에 지원한 내역이 있는지 확인한다.
 - 지원한 내역이 있다면 "이미 지원하셨습니다." 라는 오류 메세지를 출력한다.
+
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/eb424d9c-34aa-451b-a544-f177a4586564)
+![image](https://github.com/soyeong125/wanted-pre-onboarding-backend/assets/57309311/bb7fc214-edc6-4d8e-8759-500fdd394e11)
 
