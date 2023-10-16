@@ -1,6 +1,6 @@
 package com.example.wanted.controller.recruit;
 
-import com.example.wanted.dto.recruit.request.RecruitCreateRequest;
+import com.example.wanted.dto.recruit.request.RecruitRequest;
 import com.example.wanted.service.RecruitService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ public class RecruitController {
     private final RecruitService recruitService;
 
     @PostMapping
-    public void saveRecruitment(@RequestBody RecruitCreateRequest request){
+    public void saveRecruitment(@RequestBody RecruitRequest request){
         recruitService.saveRecruitment(request);
     }
 

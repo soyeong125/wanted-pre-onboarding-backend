@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class RecruitCreateRequest {
+public class RecruitRequest {
     private long companyId;
     private String position;
     private int compensation;
@@ -14,7 +14,7 @@ public class RecruitCreateRequest {
     private String skill;
 
     @Builder
-    public RecruitCreateRequest(long companyId, String position, int compensation, String content, String skill) {
+    public RecruitRequest(long companyId, String position, int compensation, String content, String skill) {
         this.companyId = companyId;
         this.position = position;
         this.compensation = compensation;

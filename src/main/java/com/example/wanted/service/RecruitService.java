@@ -4,7 +4,7 @@ import com.example.wanted.domain.company.Company;
 import com.example.wanted.domain.company.CompanyRepository;
 import com.example.wanted.domain.recruit.Recruit;
 import com.example.wanted.domain.recruit.RecruitRepository;
-import com.example.wanted.dto.recruit.request.RecruitCreateRequest;
+import com.example.wanted.dto.recruit.request.RecruitRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +17,7 @@ public class RecruitService {
     private final CompanyRepository companyRepository;
 
     @Transactional
-    public void saveRecruitment(RecruitCreateRequest request){
+    public void saveRecruitment(RecruitRequest request){
 
         Company company =  companyRepository.findById(request.getCompanyId())
                 .orElseThrow(IllegalArgumentException::new);
@@ -32,6 +32,7 @@ public class RecruitService {
 
         recruitRepository.save(recruit);
     }
+
 
 
 
