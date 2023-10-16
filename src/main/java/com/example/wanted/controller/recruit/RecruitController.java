@@ -3,10 +3,7 @@ package com.example.wanted.controller.recruit;
 import com.example.wanted.dto.recruit.request.RecruitRequest;
 import com.example.wanted.service.RecruitService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +15,11 @@ public class RecruitController {
     @PostMapping
     public void saveRecruitment(@RequestBody RecruitRequest request){
         recruitService.saveRecruitment(request);
+    }
+
+    @PatchMapping("/{id}")
+    public void updateRecruitment(@PathVariable Long id, @RequestBody RecruitRequest request){
+        recruitService.updateRecruitment(id, request);
     }
 
 

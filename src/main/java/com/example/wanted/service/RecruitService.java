@@ -33,7 +33,13 @@ public class RecruitService {
         recruitRepository.save(recruit);
     }
 
+    @Transactional
+    public void updateRecruitment(Long id, RecruitRequest request) {
+        Recruit recruit =  recruitRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
 
+        recruit.updateInfo(request.getPosition(), request.getCompensation(), request.getLocation(), request.getContent(), request.getSkill());
+    }
 
 
 }

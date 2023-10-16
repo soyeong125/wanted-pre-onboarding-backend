@@ -45,4 +45,12 @@ public class Recruit {
         this.skill = skill;
         this.company = company;
     }
+
+    public void updateInfo(String position, int compensation, String location, String content, String skill) {
+        this.position = position;
+        this.compensation = compensation;
+        this.location = location;
+        this.content = content;
+        this.skill = skill;
+    }
 }
