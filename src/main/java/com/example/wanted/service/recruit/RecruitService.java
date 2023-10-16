@@ -1,4 +1,4 @@
-package com.example.wanted.service;
+package com.example.wanted.service.recruit;
 
 import com.example.wanted.domain.company.Company;
 import com.example.wanted.domain.company.CompanyRepository;

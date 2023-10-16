@@ -3,7 +3,7 @@ package com.example.wanted.controller.recruit;
 import com.example.wanted.dto.recruit.request.RecruitRequest;
 import com.example.wanted.dto.recruit.response.RecruitDetailResponse;
 import com.example.wanted.dto.recruit.response.RecruitResponse;
-import com.example.wanted.service.RecruitService;
+import com.example.wanted.service.recruit.RecruitService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
