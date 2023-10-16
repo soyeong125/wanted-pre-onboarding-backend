@@ -5,6 +5,7 @@ import com.example.wanted.domain.company.CompanyRepository;
 import com.example.wanted.domain.recruit.Recruit;
 import com.example.wanted.domain.recruit.RecruitRepository;
 import com.example.wanted.dto.recruit.request.RecruitRequest;
+import com.example.wanted.dto.recruit.response.RecruitDetailResponse;
 import com.example.wanted.dto.recruit.response.RecruitResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -69,6 +70,19 @@ public class RecruitService {
                 .map(RecruitResponse::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public RecruitDetailResponse getRecruitmentDetail(Long id){
+
+        Recruit recruit =  recruitRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
+
+        return RecruitDetailResponse.buildEntity(recruit);
+
+
+
+    }
+
 
 
 }

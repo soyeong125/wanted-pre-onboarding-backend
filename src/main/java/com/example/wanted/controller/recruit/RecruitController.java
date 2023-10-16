@@ -1,6 +1,7 @@
 package com.example.wanted.controller.recruit;
 
 import com.example.wanted.dto.recruit.request.RecruitRequest;
+import com.example.wanted.dto.recruit.response.RecruitDetailResponse;
 import com.example.wanted.dto.recruit.response.RecruitResponse;
 import com.example.wanted.service.RecruitService;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,11 @@ public class RecruitController {
     @GetMapping
     public List<RecruitResponse> getRecruitments(@RequestParam(required = false) String keyword) {
         return recruitService.getRecruitments(keyword);
+    }
+
+    @GetMapping("/{id}")
+    public RecruitDetailResponse getRecruitmentDetail(@PathVariable Long id) {
+        return recruitService.getRecruitmentDetail(id);
     }
 
 

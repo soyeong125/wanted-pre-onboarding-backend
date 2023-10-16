@@ -16,7 +16,6 @@ public class RecruitResponse {
     private String location;
     private String position;
     private int compensation;
-    private String content;
     private String skill;
 
     public RecruitResponse(Recruit recruit) {
@@ -25,7 +24,6 @@ public class RecruitResponse {
         this.location = recruit.getLocation();
         this.position = recruit.getPosition();
         this.compensation = recruit.getCompensation();
-        this.content = recruit.getContent();
         this.skill = recruit.getSkill();
     }
 }
