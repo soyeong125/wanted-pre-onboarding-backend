@@ -5,9 +5,13 @@ import com.example.wanted.domain.company.CompanyRepository;
 import com.example.wanted.domain.recruit.Recruit;
 import com.example.wanted.domain.recruit.RecruitRepository;
 import com.example.wanted.dto.recruit.request.RecruitRequest;
+import com.example.wanted.dto.recruit.response.RecruitResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -47,6 +51,13 @@ public class RecruitService {
                 .orElseThrow(IllegalArgumentException::new);
 
         recruitRepository.delete(recruit);
+    }
+
+    @Transactional(readOnly = true)
+    public List<RecruitResponse> getRecruitments(){
+        return recruitRepository.findAll().stream()
+                .map(RecruitResponse::new)
+                .collect(Collectors.toList());
     }
 
 

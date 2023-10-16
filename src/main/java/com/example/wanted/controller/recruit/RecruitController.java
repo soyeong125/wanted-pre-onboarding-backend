@@ -1,9 +1,12 @@
 package com.example.wanted.controller.recruit;
 
 import com.example.wanted.dto.recruit.request.RecruitRequest;
+import com.example.wanted.dto.recruit.response.RecruitResponse;
 import com.example.wanted.service.RecruitService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,6 +28,11 @@ public class RecruitController {
     @DeleteMapping("/{id}")
     public void deleteRecruitment(@PathVariable Long id){
         recruitService.deleteRecruitment(id);
+    }
+
+    @GetMapping("/all")
+    public List<RecruitResponse> getRecruitments() {
+        return recruitService.getRecruitments();
     }
 
 
