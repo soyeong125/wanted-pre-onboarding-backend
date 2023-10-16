@@ -23,4 +23,12 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     List<Apply> applyList = new ArrayList<>();
 
+    public boolean hasAppliedTo(Recruit recruit) {
+        return applyList.stream().anyMatch(apply -> apply.getRecruit().equals(recruit));
+    }
+
+    public User(String name) {
+        this.name = name;
+    }
 }
+
